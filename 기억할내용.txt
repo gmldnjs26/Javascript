@@ -1,0 +1,109 @@
+JavaScript 는 서버 브라우저 등등 여러가지 환경에서 사용되는 탈 웹 언어이다.
+
+== equal operator 데이타입이 달라도 가지고 있는 정보가 똑같으면 true
+
+=== strict equal operator 데이터 타입까지 엄격하게 본다.
+
+=== 이걸 쓰자!
+
+alert(i++) alert 실행후 +1이 된다.
+alert(++i) alert 실행전 +1이 된다.
+
+fuction -> 재사용성(좋은 부품을 만드는게 목표)/ 유지보수의 용이/ 가독성
+
+parameter(매개변수) -> 인자를 받는 변수
+
+javascript 함수형 언어 함수의 중요성을 인지하자
+
+모듈화(순수한 자바스크립트에서는 모듈이라는 개념이 분명하게 존재하지 않는다. 
+	하지만 환경에따라 서로 다른 방법이 제공되고 있다.)
+
+호스트 환경
+:Javascript가 구동되는 환경을 의미, 
+ node.js -> 서버 측에서 실행되는 자바스크립트다.
+ Google Apps Script -> 이것도 환경임 그냥 그렇다 ㅎ
+
+좋은 라이브러리를 선택하고 잘 사용하는 것은 프로그래밍의 핵심!
+
+jquery -> 라이브러리 구나..
+
+정규표현식: 정규표현식을 컴파일해서 객체를 만들었다면 이제 문자열에서 원하는 문자를 찾아내자
+	   추출,Test,치환하는것
+var pattern = /a/;
+pattern.exec('abcde'); -> ["a"]
+
+var pattern = /a./; .은 하나의 문자 .앞에는 반드시 a가 있어야하는 패턴
+pattern.exec('abcde'); -> ["ab"]
+
+javascript는 함수에 대해서만 유효범위를 제공한다.
+정적 유효범위 -> 함수가 사용될때x 함수가 정의될때o 안의 변수가 정해진다.
+
+값으로서의 함수 a = { b:function(){}, a:100 } -> 여기서 function 은 method(메소드) a는 property(속성)
+javascript의 함수는 first-class citizen이다 변수,매개변수,리턴값으로 사용될 수 있다는 의미다.
+callback -> sort할때 인자값으로 함수를 넣어서 사용자정의 sort하는것 인자값으로 넣은 함수가 callback 함수가 된다.
+
+동기처리: 글작성->이메일발송->작성완료 순차적으로 진행해서 처리하면 동기적 처리
+
+비동기처리:  글작성-> (이메일발송 예약) -> 작성완료 // 이메일발송은 background에서 어떤 함수가 혼자서 처리(비동기적 처리)
+
+Ajax(Asynchronous javascript and XML): web이 한단계 발전하게 해준 기술 페이지 갱신없이 서버에서 따로 정보를 요청해서 가져오는 기법
+ javascript 수업이 끝나면 찾아 보자 ㅎㅎ
+
+클로저
+: 내부함수가 외부함수의 맥락에 접근할 수 있는것을 가르킨다.
+  클로저는 자바스트립트를 이용한 고난이도의 테크닉을 구사하는데 필수적인 개념으로 활용된다.
+  내부함수는 호출된 그 시점에서의 외부함수의 지역변수에 접근할 수 있다. 그 지역 변수의 값은 유지가 된다.
+  그 변수는 private 속성을 가질수 있게 된다. closer라는건 private속성을 가질 수 있게하는 아주좋은 machanism이다.
+
+arguments -> 몇개의 인자가 들어왔는지 알수있게 해 주는 친구
+
+function Person(){}
+var p = new Person() -> 이러면 생성자가 된대.. ㅎㄷㄷ
+---------------------------------------------------------------------------------------------------------
+
+HTML Javascript의 만남
+
+이벤트 -> onclick onchange 등 이벤트가 일어났을때 자바스크립트로 처리할 수 있다.
+
+css: id->#(어떤 한 친구를 식별하는것)  class->.(그룹핑 할때 쓰는것) class 안에서 id를 써서 예외로 하는 그런 개념
+
+document < dom < window, ajax, cookie 
+
+ajax -> 사용성의 증대, 필요한 부분만 부분적 로드가능, 시간,돈,네트워크자원 절약가
+fetch('css').then(function(response){
+		response.text().then(function(text){
+			alert(text);
+		})
+	}) 
+
+html, css, javascript, ajax
+
+JSON > XML 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+

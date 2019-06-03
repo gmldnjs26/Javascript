@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// function numbering(){ // 함수를 정의
+	// 	document.write(1);
+	// }
+	numbering = fuction(){ // 이렇게 정의도 가능
+		i=0;
+		while(i < 10){
+			document.write(i);
+			i++;
+		}
+	}
+	numbering();
+	(function (){
+		i=0;
+		while(i < 10){
+			document.write(i);
+			i++;
+		}
+	})(); // 익명함수 바로 호출
+
+</script>
+</body>
+</html>

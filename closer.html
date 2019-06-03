@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function outter(){
+		var title = 'kwak';
+		return function(){
+			alert(title);
+		}
+	}
+	inner = outter(); // 함수는 return 을 하는순간 이미 죽은상태
+	inner();
+	function factory_movie(title){ // 외부함수 title은 private이 된다..와우
+		return {
+			get_title : function (){ // 내부함수
+				return title;
+			},
+			set_title : function (){
+				title = _title;
+			}
+		}
+	}
+	ghost = factory_movie('Ghost in the shell');
+	matrix = factory_movie('Matrix');
+
+	alert(ghost.get_title());
+	alert(matrix.get_title());
+
+	var arr =[]
+	// for(var i=0; i<5; i++){ 내부함수i는 전역변수i를 바라보고있어서 55555가나옴
+	// 	arr[i] = function(){
+	// 		return i;
+	// 	}
+	// }
+	for(var i=0; i<5; i++){
+		arr[i] = function(id){
+			return function(){
+				return id;
+			}
+		}(i);
+	}
+	for(var index in arr){
+		document.write(arr[index]());
+	}
+</script>
+</body>
+</html>

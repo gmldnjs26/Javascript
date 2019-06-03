@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<script>
+		var Body = {
+			setColor:function setColor(color){
+			var list = document.querySelectorAll('a');
+			for(i=0;i<list.length;i++){
+				list[i].style.color = color;
+			}},
+			BodySetColor:function BodySetColor(color){
+			document.querySelector('body').style.color = color;
+			},
+			BodySetBackgroundColor:function BodySetBackgroundColor(color){
+			document.querySelector('body').style.backgroundColor = color;
+			}
+		}
+		
+		function nightDayHandler(self){
+		
+		if(self.value==='night'){
+			Body.BodySetBackgroundColor('black');
+			Body.BodySetColor('white');
+			self.value='day';
+			
+		}
+		else{
+			Body.BodySetBackgroundColor('white');
+			Body.BodySetColor('black');
+			self.value='night';
+			
+		}
+	}
+	</script>
+	<style>
+		.js{ 
+			font-weight:normal; 
+			color: red;
+		}
+		#first{
+			color:green;
+		}
+		span{
+			color:blue;
+		}
+	</style>
+	<title>WEB - Javascript</title>
+</head>
+<body style="background-color:black; color: white">
+	<h1><a href="array.html">array</a></h1>
+	<h1><a href="closer.html">closer</a></h1>
+	<h1><a href="function1.html">function</a></h1>
+	<input id=night_day type="button" value="night" onclick="nightDayHandler(this)">
+	<p>
+		<span id="first" class="js">kwak</span> my name is kwak hee won best of best
+		<span class="js">kwak</span> is <span>good</span> man and  
+	</p>
+
+</body>
+</html>
